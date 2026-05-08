@@ -1,0 +1,488 @@
+<!doctype html>
+<html lang="uz">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hisobni o'chirish — Kiyim Patterns</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --dark: #0f0f13;
+        --dark2: #1a1a22;
+        --card: #1e1e28;
+        --red: #e03535;
+        --red-soft: rgba(224, 53, 53, 0.12);
+        --gold: #c9a84c;
+        --white: #f5f5f7;
+        --muted: #8a8a9a;
+        --border: rgba(255, 255, 255, 0.07);
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        background: var(--dark);
+        color: var(--white);
+        font-family: "DM Sans", sans-serif;
+        min-height: 100vh;
+        overflow-x: hidden;
+      }
+
+      /* Background texture */
+      body::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        background:
+          radial-gradient(
+            ellipse 80% 60% at 20% 0%,
+            rgba(201, 168, 76, 0.06) 0%,
+            transparent 60%
+          ),
+          radial-gradient(
+            ellipse 60% 40% at 80% 100%,
+            rgba(224, 53, 53, 0.05) 0%,
+            transparent 60%
+          );
+        pointer-events: none;
+        z-index: 0;
+      }
+
+      .container {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 0 24px;
+        position: relative;
+        z-index: 1;
+      }
+
+      /* Header */
+      header {
+        padding: 48px 0 32px;
+        border-bottom: 1px solid var(--border);
+        margin-bottom: 64px;
+      }
+
+      .app-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        background: var(--card);
+        border: 1px solid var(--border);
+        padding: 8px 16px;
+        border-radius: 100px;
+        margin-bottom: 32px;
+        font-size: 13px;
+        color: var(--muted);
+      }
+
+      .app-badge span {
+        width: 8px;
+        height: 8px;
+        background: var(--gold);
+        border-radius: 50%;
+        display: inline-block;
+      }
+
+      h1 {
+        font-family: "Playfair Display", serif;
+        font-size: clamp(36px, 5vw, 64px);
+        font-weight: 900;
+        line-height: 1.05;
+        letter-spacing: -0.02em;
+        margin-bottom: 16px;
+      }
+
+      h1 em {
+        font-style: normal;
+        color: var(--red);
+      }
+
+      .subtitle {
+        color: var(--muted);
+        font-size: 16px;
+        line-height: 1.6;
+        max-width: 480px;
+      }
+
+      /* Warning banner */
+      .warning {
+        background: var(--red-soft);
+        border: 1px solid rgba(224, 53, 53, 0.25);
+        border-radius: 16px;
+        padding: 20px 24px;
+        margin-bottom: 64px;
+        display: flex;
+        align-items: flex-start;
+        gap: 16px;
+      }
+
+      .warning-icon {
+        font-size: 24px;
+        flex-shrink: 0;
+        margin-top: 2px;
+      }
+
+      .warning p {
+        font-size: 14px;
+        line-height: 1.6;
+        color: #ff9090;
+      }
+
+      .warning strong {
+        color: #ffb3b3;
+        font-weight: 600;
+      }
+
+      /* Steps section */
+      .steps-title {
+        font-family: "Playfair Display", serif;
+        font-size: 28px;
+        font-weight: 700;
+        margin-bottom: 40px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .steps-title::after {
+        content: "";
+        flex: 1;
+        height: 1px;
+        background: var(--border);
+      }
+
+      .steps {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+      }
+
+      .step {
+        display: grid;
+        grid-template-columns: 80px 1fr 240px;
+        gap: 32px;
+        align-items: start;
+        padding: 40px 0;
+        border-bottom: 1px solid var(--border);
+        opacity: 0;
+        transform: translateY(20px);
+        animation: fadeUp 0.5s forwards;
+      }
+
+      .step:nth-child(1) {
+        animation-delay: 0.1s;
+      }
+      .step:nth-child(2) {
+        animation-delay: 0.2s;
+      }
+      .step:nth-child(3) {
+        animation-delay: 0.3s;
+      }
+
+      @keyframes fadeUp {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .step-number {
+        font-family: "Playfair Display", serif;
+        font-size: 64px;
+        font-weight: 900;
+        color: var(--border);
+        line-height: 1;
+        letter-spacing: -0.04em;
+        user-select: none;
+      }
+
+      .step-content {
+        padding-top: 8px;
+      }
+
+      .step-label {
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--gold);
+        margin-bottom: 8px;
+      }
+
+      .step h3 {
+        font-size: 22px;
+        font-weight: 600;
+        margin-bottom: 12px;
+        letter-spacing: -0.01em;
+      }
+
+      .step p {
+        font-size: 14px;
+        line-height: 1.7;
+        color: var(--muted);
+      }
+
+      .step p strong {
+        color: var(--white);
+        font-weight: 500;
+      }
+
+      /* Phone mockup */
+      .phone-wrap {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+      }
+
+      .phone {
+        width: 180px;
+        border-radius: 32px;
+        border: 2px solid rgba(255, 255, 255, 0.1);
+        box-shadow:
+          0 32px 64px rgba(0, 0, 0, 0.6),
+          0 0 0 1px rgba(255, 255, 255, 0.04),
+          inset 0 1px 0 rgba(255, 255, 255, 0.08);
+        overflow: hidden;
+        transition:
+          transform 0.3s ease,
+          box-shadow 0.3s ease;
+      }
+
+      .phone:hover {
+        transform: translateY(-8px) scale(1.02);
+        box-shadow:
+          0 48px 80px rgba(0, 0, 0, 0.7),
+          0 0 0 1px rgba(255, 255, 255, 0.06),
+          inset 0 1px 0 rgba(255, 255, 255, 0.1);
+      }
+
+      .phone img {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+
+      /* Data section */
+      .data-section {
+        margin: 64px 0;
+        padding: 40px;
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 24px;
+      }
+
+      .data-section h2 {
+        font-family: "Playfair Display", serif;
+        font-size: 24px;
+        font-weight: 700;
+        margin-bottom: 24px;
+      }
+
+      .data-list {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+      }
+
+      .data-item {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 14px 16px;
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        font-size: 13px;
+        color: var(--muted);
+      }
+
+      .data-item .dot {
+        width: 6px;
+        height: 6px;
+        background: var(--red);
+        border-radius: 50%;
+        flex-shrink: 0;
+      }
+
+      /* Footer */
+      footer {
+        border-top: 1px solid var(--border);
+        padding: 40px 0;
+        margin-top: 64px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 16px;
+      }
+
+      .footer-app {
+        font-family: "Playfair Display", serif;
+        font-size: 18px;
+        font-weight: 700;
+      }
+
+      .footer-note {
+        font-size: 12px;
+        color: var(--muted);
+      }
+
+      /* Mobile */
+      @media (max-width: 640px) {
+        .step {
+          grid-template-columns: 1fr;
+          gap: 20px;
+        }
+        .step-number {
+          font-size: 40px;
+        }
+        .phone-wrap {
+          order: -1;
+        }
+        .phone {
+          width: 140px;
+        }
+        .data-list {
+          grid-template-columns: 1fr;
+        }
+        footer {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <div class="app-badge">
+          <span></span>
+          Kiyim Patterns — Rasmiy yo'riqnoma
+        </div>
+        <h1>Hisobni<br /><em>o'chirish</em></h1>
+        <p class="subtitle">
+          Hisobingizni qanday o'chirishni bilmoqchimisiz? Quyidagi qadamlarni
+          bajaring.
+        </p>
+      </header>
+
+      <div class="warning">
+        <div class="warning-icon">⚠️</div>
+        <p>
+          <strong>Diqqat:</strong> Hisobni o'chirgandan so'ng barcha
+          ma'lumotlaringiz, sevimlilaringiz va profil ma'lumotlaringiz
+          <strong>butunlay va qaytarib bo'lmaydi</strong> tarzda o'chiriladi. Bu
+          amalni qaytarib bo'lmaydi.
+        </p>
+      </div>
+
+      <h2 class="steps-title">Qadamlar</h2>
+
+      <div class="steps">
+        <!-- Step 1 -->
+        <div class="step">
+          <div class="step-number">01</div>
+          <div class="step-content">
+            <div class="step-label">Qadam 1</div>
+            <h3>Profil sahifasiga o'ting</h3>
+            <p>
+              Ilovani oching va pastki navigatsiyadan
+              <strong>"Profil"</strong> bo'limiga o'ting. Profil sahifasida
+              obuna ma'lumotlari va sozlamalar ko'rinadi. Sahifaning eng pastiga
+              aylantiring.
+            </p>
+          </div>
+          <div class="phone-wrap">
+            <div class="phone">
+              <img
+                src="https://twyuwoabay.ufs.sh/f/VKF1Rsh9mraTymUcfzwaVhgOKxAJXyMLHs4jpbNztU7W6Bei"
+                alt="Profil sahifasi"
+              />
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="step">
+          <div class="step-number">02</div>
+          <div class="step-content">
+            <div class="step-label">Qadam 2</div>
+            <h3>"Hisobni o'chirish" tugmasini bosing</h3>
+            <p>
+              <strong>"Hisobni o'chirish"</strong> (qizil tugma) ni bosing.
+              Tasdiqlash oynasi paydo bo'ladi. Oynada
+              <strong>"Davom etish"</strong> tugmasini bosing.
+            </p>
+          </div>
+          <div class="phone-wrap">
+            <div class="phone">
+              <img
+                src="https://twyuwoabay.ufs.sh/f/VKF1Rsh9mraTpxxwDITfPBD6zfVSTWL9iQtaH5yXhxsKZenM"
+                alt="Hisobni o'chirish oynasi"
+              />
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="step">
+          <div class="step-number">03</div>
+          <div class="step-content">
+            <div class="step-label">Qadam 3</div>
+            <h3>Tasdiqlang</h3>
+            <p>
+              Ikkinchi tasdiqlash oynasida
+              <strong>"Ha, o'chirish"</strong> tugmasini bosing. Hisobingiz va
+              barcha ma'lumotlaringiz butunlay o'chiriladi.
+            </p>
+          </div>
+          <div class="phone-wrap">
+            <div class="phone">
+              <img
+                src="https://twyuwoabay.ufs.sh/f/VKF1Rsh9mraTEf0EI9ACq2NdVgfuY5evJnHrRZb4ohl6ILza"
+                alt="Tasdiqlash"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Data deleted section -->
+      <div class="data-section">
+        <h2>O'chiriladigan ma'lumotlar</h2>
+        <div class="data-list">
+          <div class="data-item">
+            <span class="dot"></span>Profil ma'lumotlari (ism, email)
+          </div>
+          <div class="data-item">
+            <span class="dot"></span>Saqlangan sevimli patternlar
+          </div>
+
+          <div class="data-item">
+            <span class="dot"></span>Bildirishnoma sozlamalari
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="footer-app">Kiyim Patterns</div>
+        <div class="footer-note">
+          Savol bo'lsa:
+          <a
+            href="https://t.me/chinora_admin"
+            style="color: var(--gold); text-decoration: none"
+            >@chinora_admin</a
+          ><br />
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
