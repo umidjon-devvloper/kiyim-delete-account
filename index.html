@@ -3,7 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hisobni o'chirish — Kiyim Patterns</title>
+    <title>Chinora — Hisobni o'chirish (Delete Account) | umidjon_company</title>
+    <meta
+      name="description"
+      content="Chinora ilovasi (com.chinora.app, dasturchi: umidjon_company) hisobini va ma'lumotlarni o'chirish bo'yicha rasmiy yo'riqnoma. Account deletion instructions for the Chinora app by umidjon_company."
+    />
+    <meta name="robots" content="index, follow" />
     <link
       href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap"
       rel="stylesheet"
@@ -110,6 +115,154 @@
         font-size: 16px;
         line-height: 1.6;
         max-width: 480px;
+      }
+
+      /* App identity card */
+      .identity {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 20px;
+        padding: 28px 32px;
+        margin-bottom: 32px;
+      }
+
+      .identity h2 {
+        font-family: "Playfair Display", serif;
+        font-size: 20px;
+        font-weight: 700;
+        margin-bottom: 20px;
+      }
+
+      .identity-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px 32px;
+      }
+
+      .identity-row {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+      }
+
+      .identity-key {
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--gold);
+      }
+
+      .identity-val {
+        font-size: 15px;
+        font-weight: 500;
+        color: var(--white);
+        word-break: break-word;
+      }
+
+      .identity-val a {
+        color: var(--white);
+        text-decoration: none;
+        border-bottom: 1px solid var(--gold);
+      }
+
+      /* Contact / request block */
+      .contact-section {
+        margin: 64px 0;
+        padding: 40px;
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 24px;
+      }
+
+      .contact-section h2 {
+        font-family: "Playfair Display", serif;
+        font-size: 24px;
+        font-weight: 700;
+        margin-bottom: 12px;
+      }
+
+      .contact-section > p {
+        font-size: 14px;
+        line-height: 1.7;
+        color: var(--muted);
+        margin-bottom: 24px;
+      }
+
+      .contact-list {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+      }
+
+      .contact-item {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        padding: 18px 20px;
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+      }
+
+      .contact-item span {
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--muted);
+      }
+
+      .contact-item a {
+        font-size: 15px;
+        font-weight: 500;
+        color: var(--gold);
+        text-decoration: none;
+        word-break: break-all;
+      }
+
+      .retention {
+        margin-top: 24px;
+        font-size: 13px;
+        line-height: 1.7;
+        color: var(--muted);
+      }
+
+      .retention strong {
+        color: var(--white);
+        font-weight: 500;
+      }
+
+      /* English summary */
+      .en-summary {
+        margin: 64px 0 0;
+        padding: 32px;
+        border: 1px dashed var(--border);
+        border-radius: 20px;
+      }
+
+      .en-summary h2 {
+        font-family: "Playfair Display", serif;
+        font-size: 20px;
+        font-weight: 700;
+        margin-bottom: 16px;
+      }
+
+      .en-summary p {
+        font-size: 13px;
+        line-height: 1.8;
+        color: var(--muted);
+        margin-bottom: 12px;
+      }
+
+      .en-summary strong {
+        color: var(--white);
+        font-weight: 500;
+      }
+
+      .en-summary a {
+        color: var(--gold);
+        text-decoration: none;
       }
 
       /* Warning banner */
@@ -350,8 +503,15 @@
         .phone {
           width: 140px;
         }
-        .data-list {
+        .data-list,
+        .identity-grid,
+        .contact-list {
           grid-template-columns: 1fr;
+        }
+        .identity,
+        .contact-section,
+        .en-summary {
+          padding: 24px 20px;
         }
         footer {
           flex-direction: column;
@@ -365,14 +525,43 @@
       <header>
         <div class="app-badge">
           <span></span>
-          Kiyim Patterns — Rasmiy yo'riqnoma
+          Chinora — Rasmiy yo'riqnoma
         </div>
         <h1>Hisobni<br /><em>o'chirish</em></h1>
         <p class="subtitle">
-          Hisobingizni qanday o'chirishni bilmoqchimisiz? Quyidagi qadamlarni
-          bajaring.
+          Bu sahifa <strong>Chinora</strong> mobil ilovasi
+          (dasturchi: <strong>umidjon_company</strong>) foydalanuvchilari uchun.
+          Hisobingizni va u bilan bog'liq barcha ma'lumotlarni o'chirish uchun
+          quyidagi qadamlarni bajaring.
         </p>
       </header>
+
+      <div class="identity">
+        <h2>Ilova haqida ma'lumot</h2>
+        <div class="identity-grid">
+          <div class="identity-row">
+            <div class="identity-key">Ilova nomi / App name</div>
+            <div class="identity-val">Chinora</div>
+          </div>
+          <div class="identity-row">
+            <div class="identity-key">Dasturchi / Developer</div>
+            <div class="identity-val">umidjon_company</div>
+          </div>
+          <div class="identity-row">
+            <div class="identity-key">Package name</div>
+            <div class="identity-val">com.chinora.app</div>
+          </div>
+          <div class="identity-row">
+            <div class="identity-key">Google Play</div>
+            <div class="identity-val">
+              <a
+                href="https://play.google.com/store/apps/details?id=com.chinora.app"
+                >play.google.com/store/apps/details?id=com.chinora.app</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
 
       <div class="warning">
         <div class="warning-icon">⚠️</div>
@@ -460,7 +649,7 @@
         <h2>O'chiriladigan ma'lumotlar</h2>
         <div class="data-list">
           <div class="data-item">
-            <span class="dot"></span>Profil ma'lumotlari (ism, email)
+            <span class="dot"></span>Profil ma'lumotlari (ism, email, telefon)
           </div>
           <div class="data-item">
             <span class="dot"></span>Saqlangan sevimli patternlar
@@ -469,18 +658,91 @@
           <div class="data-item">
             <span class="dot"></span>Bildirishnoma sozlamalari
           </div>
+          <div class="data-item">
+            <span class="dot"></span>Obuna va ilova ichidagi faoliyat tarixi
+          </div>
+        </div>
+        <p class="retention">
+          <strong>Muddat:</strong> so'rov tasdiqlangandan so'ng hisobingiz darhol
+          bloklanadi va barcha shaxsiy ma'lumotlaringiz serverlarimizdan
+          <strong>30 kun ichida</strong> butunlay o'chiriladi.
+          <br />
+          <strong>Saqlanadigan ma'lumotlar:</strong> to'lov va soliq
+          hisobotlariga oid yozuvlar (to'lov sanasi va summasi) qonun talabiga
+          ko'ra shaxsni aniqlab bo'lmaydigan shaklda saqlanishi mumkin. Bu
+          ma'lumotlar sizning profilingiz bilan bog'lanmaydi.
+        </p>
+      </div>
+
+      <div class="contact-section">
+        <h2>Ilovasiz o'chirishni so'rash</h2>
+        <p>
+          Agar ilovadan foydalana olmasangiz (masalan, ilovani o'chirib
+          yuborgan bo'lsangiz yoki hisobingizga kira olmasangiz), quyidagi
+          manzillarga murojaat qiling. Xabarda ro'yxatdan o'tgan
+          <strong>telefon raqamingiz yoki emailingiz</strong>ni yozing va
+          "Hisobni o'chirish" deb ko'rsating. So'rovingiz
+          <strong>7 ish kuni</strong> ichida ko'rib chiqiladi.
+        </p>
+        <div class="contact-list">
+          <div class="contact-item">
+            <span>Email</span>
+            <a href="mailto:umidjongafforov844@gmail.com?subject=Chinora%20-%20Hisobni%20o'chirish"
+              >umidjongafforov844@gmail.com</a
+            >
+          </div>
+          <div class="contact-item">
+            <span>Telegram</span>
+            <a href="https://t.me/chinora_admin">@chinora_admin</a>
+          </div>
         </div>
       </div>
 
+      <div class="en-summary">
+        <h2>Account Deletion — English summary</h2>
+        <p>
+          This page explains how to delete your account and associated data for
+          the <strong>Chinora</strong> mobile application
+          (<strong>com.chinora.app</strong>), published on Google Play by the
+          developer <strong>umidjon_company</strong>.
+        </p>
+        <p>
+          <strong>In-app:</strong> open the app → <strong>Profile</strong> tab →
+          scroll to the bottom → tap <strong>"Hisobni o'chirish"</strong>
+          (Delete account) → confirm twice. Your account is deleted immediately.
+        </p>
+        <p>
+          <strong>Without the app:</strong> send a deletion request to
+          <a href="mailto:umidjongafforov844@gmail.com">umidjongafforov844@gmail.com</a>
+          or <a href="https://t.me/chinora_admin">@chinora_admin</a> on Telegram,
+          including the phone number or email used to register. Requests are
+          processed within 7 business days.
+        </p>
+        <p>
+          <strong>Deleted data:</strong> profile information (name, email, phone),
+          saved favourite patterns, notification settings, subscription and
+          in-app activity history — permanently removed within 30 days.
+          <strong>Retained data:</strong> anonymised payment records required by
+          accounting and tax law; these are not linked to your profile.
+        </p>
+      </div>
+
       <footer>
-        <div class="footer-app">Kiyim Patterns</div>
+        <div class="footer-app">Chinora</div>
         <div class="footer-note">
+          © umidjon_company · Chinora (com.chinora.app)<br />
           Savol bo'lsa:
+          <a
+            href="mailto:umidjongafforov844@gmail.com"
+            style="color: var(--gold); text-decoration: none"
+            >umidjongafforov844@gmail.com</a
+          >
+          ·
           <a
             href="https://t.me/chinora_admin"
             style="color: var(--gold); text-decoration: none"
             >@chinora_admin</a
-          ><br />
+          >
         </div>
       </footer>
     </div>
