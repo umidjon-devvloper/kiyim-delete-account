@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Chinora — Hisobni o'chirish (Delete Account) | umidjon_company</title>
+    <title>Maxfiylik siyosati (Privacy Policy) — Chinora | umidjon_company</title>
     <meta
       name="description"
-      content="Chinora ilovasi (com.chinara.chinora, dasturchi: umidjon_company) hisobini va ma'lumotlarni o'chirish bo'yicha rasmiy yo'riqnoma. Account deletion instructions for the Chinora app by umidjon_company."
+      content="Chinora ilovasining (com.chinara.chinora, dasturchi: umidjon_company) rasmiy maxfiylik siyosati. Official Privacy Policy for the Chinora app, including account and data deletion."
     />
     <meta name="robots" content="index, follow" />
     <link
@@ -40,7 +40,6 @@
         overflow-x: hidden;
       }
 
-      /* Background texture */
       body::before {
         content: "";
         position: fixed;
@@ -72,7 +71,7 @@
       header {
         padding: 48px 0 32px;
         border-bottom: 1px solid var(--border);
-        margin-bottom: 64px;
+        margin-bottom: 48px;
       }
 
       .app-badge {
@@ -98,32 +97,62 @@
 
       h1 {
         font-family: "Playfair Display", serif;
-        font-size: clamp(36px, 5vw, 64px);
+        font-size: clamp(34px, 5vw, 60px);
         font-weight: 900;
         line-height: 1.05;
         letter-spacing: -0.02em;
-        margin-bottom: 16px;
+        margin-bottom: 10px;
       }
 
       h1 em {
         font-style: normal;
-        color: var(--red);
+        color: var(--gold);
+      }
+
+      .h1-en {
+        font-family: "Playfair Display", serif;
+        font-size: clamp(20px, 2.6vw, 28px);
+        font-weight: 700;
+        color: var(--muted);
+        letter-spacing: -0.01em;
+        margin-bottom: 20px;
       }
 
       .subtitle {
         color: var(--muted);
         font-size: 16px;
         line-height: 1.6;
-        max-width: 480px;
+        max-width: 560px;
       }
 
-      /* App identity card */
+      .meta-line {
+        margin-top: 24px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+
+      .chip {
+        font-size: 12px;
+        color: var(--muted);
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid var(--border);
+        padding: 7px 14px;
+        border-radius: 100px;
+      }
+
+      .chip strong {
+        color: var(--white);
+        font-weight: 500;
+      }
+
+      /* Cards */
       .identity {
         background: var(--card);
         border: 1px solid var(--border);
         border-radius: 20px;
         padding: 28px 32px;
-        margin-bottom: 32px;
+        margin-bottom: 56px;
       }
 
       .identity h2 {
@@ -166,33 +195,260 @@
         border-bottom: 1px solid var(--gold);
       }
 
-      /* Contact / request block */
-      .contact-section {
-        margin: 64px 0;
-        padding: 40px;
-        background: var(--card);
-        border: 1px solid var(--border);
-        border-radius: 24px;
+      /* Policy sections */
+      .policy {
+        counter-reset: sec;
       }
 
-      .contact-section h2 {
+      .sec {
+        padding: 36px 0;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .sec > h2 {
         font-family: "Playfair Display", serif;
-        font-size: 24px;
+        font-size: 26px;
         font-weight: 700;
-        margin-bottom: 12px;
+        letter-spacing: -0.01em;
+        margin-bottom: 18px;
+        display: flex;
+        align-items: baseline;
+        gap: 14px;
       }
 
-      .contact-section > p {
+      .sec > h2::before {
+        counter-increment: sec;
+        content: counter(sec, decimal-leading-zero);
+        font-size: 14px;
+        font-weight: 700;
+        color: var(--gold);
+        font-family: "DM Sans", sans-serif;
+        letter-spacing: 0.08em;
+      }
+
+      .sec p {
+        font-size: 15px;
+        line-height: 1.75;
+        color: var(--muted);
+        margin-bottom: 14px;
+      }
+
+      .sec p:last-child {
+        margin-bottom: 0;
+      }
+
+      .sec p strong,
+      .sec li strong {
+        color: var(--white);
+        font-weight: 500;
+      }
+
+      .sec a {
+        color: var(--gold);
+        text-decoration: none;
+        border-bottom: 1px solid rgba(201, 168, 76, 0.35);
+      }
+
+      .sec h3 {
+        font-size: 16px;
+        font-weight: 600;
+        color: var(--white);
+        margin: 24px 0 12px;
+      }
+
+      .bullets {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-bottom: 14px;
+      }
+
+      .bullets li {
+        position: relative;
+        padding-left: 20px;
         font-size: 14px;
         line-height: 1.7;
         color: var(--muted);
-        margin-bottom: 24px;
       }
 
+      .bullets li::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 10px;
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: var(--gold);
+      }
+
+      /* Data table */
+      .table-wrap {
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        overflow: hidden;
+        margin-bottom: 16px;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 13.5px;
+      }
+
+      th {
+        text-align: left;
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--gold);
+        background: rgba(255, 255, 255, 0.03);
+        padding: 14px 18px;
+        border-bottom: 1px solid var(--border);
+      }
+
+      td {
+        padding: 14px 18px;
+        color: var(--muted);
+        line-height: 1.6;
+        border-bottom: 1px solid var(--border);
+        vertical-align: top;
+      }
+
+      tr:last-child td {
+        border-bottom: none;
+      }
+
+      td:first-child {
+        color: var(--white);
+        font-weight: 500;
+      }
+
+      /* Warning banner */
+      .warning {
+        background: var(--red-soft);
+        border: 1px solid rgba(224, 53, 53, 0.25);
+        border-radius: 16px;
+        padding: 20px 24px;
+        margin: 24px 0;
+        display: flex;
+        align-items: flex-start;
+        gap: 16px;
+      }
+
+      .warning-icon {
+        font-size: 22px;
+        flex-shrink: 0;
+        margin-top: 1px;
+      }
+
+      .warning p {
+        font-size: 14px;
+        line-height: 1.6;
+        color: #ff9090;
+        margin: 0;
+      }
+
+      .warning strong {
+        color: #ffb3b3 !important;
+        font-weight: 600;
+      }
+
+      /* Steps */
+      .steps {
+        display: flex;
+        flex-direction: column;
+        margin-top: 8px;
+      }
+
+      .step {
+        display: grid;
+        grid-template-columns: 60px 1fr 200px;
+        gap: 24px;
+        align-items: start;
+        padding: 32px 0;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .step:last-child {
+        border-bottom: none;
+        padding-bottom: 8px;
+      }
+
+      .step-number {
+        font-family: "Playfair Display", serif;
+        font-size: 52px;
+        font-weight: 900;
+        color: var(--border);
+        line-height: 1;
+        letter-spacing: -0.04em;
+        user-select: none;
+      }
+
+      .step-content {
+        padding-top: 6px;
+      }
+
+      .step-label {
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--gold);
+        margin-bottom: 8px;
+      }
+
+      .step h3 {
+        font-size: 20px;
+        font-weight: 600;
+        margin: 0 0 10px;
+        letter-spacing: -0.01em;
+        color: var(--white);
+      }
+
+      .step p {
+        font-size: 14px;
+        line-height: 1.7;
+        color: var(--muted);
+        margin: 0;
+      }
+
+      .phone-wrap {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+      }
+
+      .phone {
+        width: 170px;
+        border-radius: 32px;
+        border: 2px solid rgba(255, 255, 255, 0.1);
+        box-shadow:
+          0 32px 64px rgba(0, 0, 0, 0.6),
+          0 0 0 1px rgba(255, 255, 255, 0.04),
+          inset 0 1px 0 rgba(255, 255, 255, 0.08);
+        overflow: hidden;
+        transition: transform 0.3s ease;
+      }
+
+      .phone:hover {
+        transform: translateY(-6px) scale(1.02);
+      }
+
+      .phone img {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+
+      /* Contact */
       .contact-list {
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 12px;
+        margin-top: 16px;
       }
 
       .contact-item {
@@ -218,258 +474,88 @@
         font-weight: 500;
         color: var(--gold);
         text-decoration: none;
+        border-bottom: none;
         word-break: break-all;
       }
 
-      .retention {
-        margin-top: 24px;
-        font-size: 13px;
-        line-height: 1.7;
-        color: var(--muted);
-      }
-
-      .retention strong {
-        color: var(--white);
-        font-weight: 500;
-      }
-
-      /* English summary */
-      .en-summary {
-        margin: 64px 0 0;
-        padding: 32px;
+      /* English block */
+      .en {
+        margin: 56px 0 0;
+        padding: 36px;
         border: 1px dashed var(--border);
         border-radius: 20px;
       }
 
-      .en-summary h2 {
+      .en h2 {
         font-family: "Playfair Display", serif;
-        font-size: 20px;
+        font-size: 26px;
         font-weight: 700;
-        margin-bottom: 16px;
+        margin-bottom: 8px;
       }
 
-      .en-summary p {
+      .en .en-sub {
         font-size: 13px;
+        color: var(--gold);
+        margin-bottom: 24px;
+        letter-spacing: 0.04em;
+      }
+
+      .en h3 {
+        font-size: 15px;
+        font-weight: 600;
+        color: var(--white);
+        margin: 22px 0 10px;
+      }
+
+      .en p {
+        font-size: 13.5px;
         line-height: 1.8;
         color: var(--muted);
         margin-bottom: 12px;
       }
 
-      .en-summary strong {
-        color: var(--white);
-        font-weight: 500;
-      }
-
-      .en-summary a {
-        color: var(--gold);
-        text-decoration: none;
-      }
-
-      /* Warning banner */
-      .warning {
-        background: var(--red-soft);
-        border: 1px solid rgba(224, 53, 53, 0.25);
-        border-radius: 16px;
-        padding: 20px 24px;
-        margin-bottom: 64px;
-        display: flex;
-        align-items: flex-start;
-        gap: 16px;
-      }
-
-      .warning-icon {
-        font-size: 24px;
-        flex-shrink: 0;
-        margin-top: 2px;
-      }
-
-      .warning p {
-        font-size: 14px;
-        line-height: 1.6;
-        color: #ff9090;
-      }
-
-      .warning strong {
-        color: #ffb3b3;
-        font-weight: 600;
-      }
-
-      /* Steps section */
-      .steps-title {
-        font-family: "Playfair Display", serif;
-        font-size: 28px;
-        font-weight: 700;
-        margin-bottom: 40px;
-        display: flex;
-        align-items: center;
-        gap: 12px;
-      }
-
-      .steps-title::after {
-        content: "";
-        flex: 1;
-        height: 1px;
-        background: var(--border);
-      }
-
-      .steps {
+      .en ul {
+        list-style: none;
         display: flex;
         flex-direction: column;
-        gap: 0;
-      }
-
-      .step {
-        display: grid;
-        grid-template-columns: 80px 1fr 240px;
-        gap: 32px;
-        align-items: start;
-        padding: 40px 0;
-        border-bottom: 1px solid var(--border);
-        opacity: 0;
-        transform: translateY(20px);
-        animation: fadeUp 0.5s forwards;
-      }
-
-      .step:nth-child(1) {
-        animation-delay: 0.1s;
-      }
-      .step:nth-child(2) {
-        animation-delay: 0.2s;
-      }
-      .step:nth-child(3) {
-        animation-delay: 0.3s;
-      }
-
-      @keyframes fadeUp {
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-
-      .step-number {
-        font-family: "Playfair Display", serif;
-        font-size: 64px;
-        font-weight: 900;
-        color: var(--border);
-        line-height: 1;
-        letter-spacing: -0.04em;
-        user-select: none;
-      }
-
-      .step-content {
-        padding-top: 8px;
-      }
-
-      .step-label {
-        font-size: 11px;
-        font-weight: 600;
-        letter-spacing: 0.12em;
-        text-transform: uppercase;
-        color: var(--gold);
-        margin-bottom: 8px;
-      }
-
-      .step h3 {
-        font-size: 22px;
-        font-weight: 600;
+        gap: 8px;
         margin-bottom: 12px;
-        letter-spacing: -0.01em;
       }
 
-      .step p {
-        font-size: 14px;
+      .en li {
+        position: relative;
+        padding-left: 18px;
+        font-size: 13.5px;
         line-height: 1.7;
         color: var(--muted);
       }
 
-      .step p strong {
+      .en li::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 9px;
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        background: var(--gold);
+      }
+
+      .en strong {
         color: var(--white);
         font-weight: 500;
       }
 
-      /* Phone mockup */
-      .phone-wrap {
-        display: flex;
-        justify-content: center;
-        align-items: flex-start;
-      }
-
-      .phone {
-        width: 180px;
-        border-radius: 32px;
-        border: 2px solid rgba(255, 255, 255, 0.1);
-        box-shadow:
-          0 32px 64px rgba(0, 0, 0, 0.6),
-          0 0 0 1px rgba(255, 255, 255, 0.04),
-          inset 0 1px 0 rgba(255, 255, 255, 0.08);
-        overflow: hidden;
-        transition:
-          transform 0.3s ease,
-          box-shadow 0.3s ease;
-      }
-
-      .phone:hover {
-        transform: translateY(-8px) scale(1.02);
-        box-shadow:
-          0 48px 80px rgba(0, 0, 0, 0.7),
-          0 0 0 1px rgba(255, 255, 255, 0.06),
-          inset 0 1px 0 rgba(255, 255, 255, 0.1);
-      }
-
-      .phone img {
-        width: 100%;
-        height: auto;
-        display: block;
-      }
-
-      /* Data section */
-      .data-section {
-        margin: 64px 0;
-        padding: 40px;
-        background: var(--card);
-        border: 1px solid var(--border);
-        border-radius: 24px;
-      }
-
-      .data-section h2 {
-        font-family: "Playfair Display", serif;
-        font-size: 24px;
-        font-weight: 700;
-        margin-bottom: 24px;
-      }
-
-      .data-list {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 12px;
-      }
-
-      .data-item {
-        display: flex;
-        align-items: center;
-        gap: 12px;
-        padding: 14px 16px;
-        background: rgba(255, 255, 255, 0.03);
-        border: 1px solid var(--border);
-        border-radius: 12px;
-        font-size: 13px;
-        color: var(--muted);
-      }
-
-      .data-item .dot {
-        width: 6px;
-        height: 6px;
-        background: var(--red);
-        border-radius: 50%;
-        flex-shrink: 0;
+      .en a {
+        color: var(--gold);
+        text-decoration: none;
       }
 
       /* Footer */
       footer {
         border-top: 1px solid var(--border);
         padding: 40px 0;
-        margin-top: 64px;
+        margin-top: 56px;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -486,16 +572,22 @@
       .footer-note {
         font-size: 12px;
         color: var(--muted);
+        line-height: 1.7;
+      }
+
+      .footer-note a {
+        color: var(--gold);
+        text-decoration: none;
       }
 
       /* Mobile */
       @media (max-width: 640px) {
         .step {
           grid-template-columns: 1fr;
-          gap: 20px;
+          gap: 18px;
         }
         .step-number {
-          font-size: 40px;
+          font-size: 38px;
         }
         .phone-wrap {
           order: -1;
@@ -503,15 +595,23 @@
         .phone {
           width: 140px;
         }
-        .data-list,
         .identity-grid,
         .contact-list {
           grid-template-columns: 1fr;
         }
         .identity,
-        .contact-section,
-        .en-summary {
+        .en {
           padding: 24px 20px;
+        }
+        .sec > h2 {
+          font-size: 22px;
+        }
+        table {
+          font-size: 12.5px;
+        }
+        th,
+        td {
+          padding: 12px 14px;
         }
         footer {
           flex-direction: column;
@@ -525,19 +625,30 @@
       <header>
         <div class="app-badge">
           <span></span>
-          Chinora — Rasmiy yo'riqnoma
+          Chinora — Rasmiy hujjat
         </div>
-        <h1>Hisobni<br /><em>o'chirish</em></h1>
+
+        <h1>Maxfiylik<br /><em>siyosati</em></h1>
+        <div class="h1-en">Privacy Policy</div>
+
         <p class="subtitle">
-          Bu sahifa <strong>Chinora</strong> mobil ilovasi
-          (dasturchi: <strong>umidjon_company</strong>) foydalanuvchilari uchun.
-          Hisobingizni va u bilan bog'liq barcha ma'lumotlarni o'chirish uchun
-          quyidagi qadamlarni bajaring.
+          Ushbu hujjat <strong>Chinora</strong> mobil ilovasining
+          (<strong>com.chinara.chinora</strong>, dasturchi:
+          <strong>umidjon_company</strong>) rasmiy maxfiylik siyosatidir. U
+          ilovada qanday ma'lumotlar yig'ilishi, ular nima uchun ishlatilishi,
+          kim bilan bo'lishilishi va foydalanuvchi ularni qanday o'chirishi
+          mumkinligini tushuntiradi.
         </p>
+
+        <div class="meta-line">
+          <div class="chip">Kuchga kirgan sana: <strong>25.07.2026</strong></div>
+          <div class="chip">Oxirgi yangilanish: <strong>25.07.2026</strong></div>
+          <div class="chip">Versiya: <strong>1.0</strong></div>
+        </div>
       </header>
 
       <div class="identity">
-        <h2>Ilova haqida ma'lumot</h2>
+        <h2>Ilova va dasturchi haqida</h2>
         <div class="identity-grid">
           <div class="identity-row">
             <div class="identity-key">Ilova nomi / App name</div>
@@ -552,6 +663,14 @@
             <div class="identity-val">com.chinara.chinora</div>
           </div>
           <div class="identity-row">
+            <div class="identity-key">Aloqa / Contact</div>
+            <div class="identity-val">
+              <a href="mailto:umidjongafforov844@gmail.com"
+                >umidjongafforov844@gmail.com</a
+              >
+            </div>
+          </div>
+          <div class="identity-row">
             <div class="identity-key">Google Play</div>
             <div class="identity-val">
               <a
@@ -560,189 +679,533 @@
               >
             </div>
           </div>
-        </div>
-      </div>
-
-      <div class="warning">
-        <div class="warning-icon">⚠️</div>
-        <p>
-          <strong>Diqqat:</strong> Hisobni o'chirgandan so'ng barcha
-          ma'lumotlaringiz, sevimlilaringiz va profil ma'lumotlaringiz
-          <strong>butunlay va qaytarib bo'lmaydi</strong> tarzda o'chiriladi. Bu
-          amalni qaytarib bo'lmaydi.
-        </p>
-      </div>
-
-      <h2 class="steps-title">Qadamlar</h2>
-
-      <div class="steps">
-        <!-- Step 1 -->
-        <div class="step">
-          <div class="step-number">01</div>
-          <div class="step-content">
-            <div class="step-label">Qadam 1</div>
-            <h3>Profil sahifasiga o'ting</h3>
-            <p>
-              Ilovani oching va pastki navigatsiyadan
-              <strong>"Profil"</strong> bo'limiga o'ting. Profil sahifasida
-              obuna ma'lumotlari va sozlamalar ko'rinadi. Sahifaning eng pastiga
-              aylantiring.
-            </p>
-          </div>
-          <div class="phone-wrap">
-            <div class="phone">
-              <img
-                src="https://twyuwoabay.ufs.sh/f/VKF1Rsh9mraTymUcfzwaVhgOKxAJXyMLHs4jpbNztU7W6Bei"
-                alt="Profil sahifasi"
-              />
-            </div>
-          </div>
-        </div>
-
-        <!-- Step 2 -->
-        <div class="step">
-          <div class="step-number">02</div>
-          <div class="step-content">
-            <div class="step-label">Qadam 2</div>
-            <h3>"Hisobni o'chirish" tugmasini bosing</h3>
-            <p>
-              <strong>"Hisobni o'chirish"</strong> (qizil tugma) ni bosing.
-              Tasdiqlash oynasi paydo bo'ladi. Oynada
-              <strong>"Davom etish"</strong> tugmasini bosing.
-            </p>
-          </div>
-          <div class="phone-wrap">
-            <div class="phone">
-              <img
-                src="https://twyuwoabay.ufs.sh/f/VKF1Rsh9mraTpxxwDITfPBD6zfVSTWL9iQtaH5yXhxsKZenM"
-                alt="Hisobni o'chirish oynasi"
-              />
-            </div>
-          </div>
-        </div>
-
-        <!-- Step 3 -->
-        <div class="step">
-          <div class="step-number">03</div>
-          <div class="step-content">
-            <div class="step-label">Qadam 3</div>
-            <h3>Tasdiqlang</h3>
-            <p>
-              Ikkinchi tasdiqlash oynasida
-              <strong>"Ha, o'chirish"</strong> tugmasini bosing. Hisobingiz va
-              barcha ma'lumotlaringiz butunlay o'chiriladi.
-            </p>
-          </div>
-          <div class="phone-wrap">
-            <div class="phone">
-              <img
-                src="https://twyuwoabay.ufs.sh/f/VKF1Rsh9mraTEf0EI9ACq2NdVgfuY5evJnHrRZb4ohl6ILza"
-                alt="Tasdiqlash"
-              />
-            </div>
+          <div class="identity-row">
+            <div class="identity-key">Hudud / Jurisdiction</div>
+            <div class="identity-val">O'zbekiston Respublikasi</div>
           </div>
         </div>
       </div>
 
-      <!-- Data deleted section -->
-      <div class="data-section">
-        <h2>O'chiriladigan ma'lumotlar</h2>
-        <div class="data-list">
-          <div class="data-item">
-            <span class="dot"></span>Profil ma'lumotlari (ism, email, telefon)
-          </div>
-          <div class="data-item">
-            <span class="dot"></span>Saqlangan sevimli patternlar
+      <div class="policy">
+        <!-- 01 -->
+        <section class="sec">
+          <h2>Umumiy qoidalar</h2>
+          <p>
+            Chinora ilovasidan foydalanish orqali siz ushbu maxfiylik siyosatida
+            bayon etilgan shartlarga rozilik bildirasiz. Agar siz ushbu shartlar
+            bilan rozi bo'lmasangiz, iltimos, ilovadan foydalanmang.
+          </p>
+          <p>
+            Biz sizning shaxsiy ma'lumotlaringizni O'zbekiston Respublikasining
+            "Shaxsga doir ma'lumotlar to'g'risida"gi qonuni hamda Google Play
+            dasturchi siyosati talablariga muvofiq qayta ishlaymiz. Biz zarur
+            bo'lgan minimal hajmdagi ma'lumotni yig'amiz va uni hech qachon
+            sotmaymiz.
+          </p>
+        </section>
+
+        <!-- 02 -->
+        <section class="sec">
+          <h2>Biz yig'adigan ma'lumotlar</h2>
+          <p>
+            Quyidagi jadvalda ilova yig'adigan ma'lumot toifalari, ularning
+            maqsadi va majburiy yoki ixtiyoriy ekani ko'rsatilgan.
+          </p>
+
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Ma'lumot turi</th>
+                  <th>Maqsad</th>
+                  <th>Holati</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Ism / familiya</td>
+                  <td>Profilni shakllantirish va murojaat qilish</td>
+                  <td>Majburiy</td>
+                </tr>
+                <tr>
+                  <td>Email manzil</td>
+                  <td>
+                    Hisobga kirish, parolni tiklash, xizmatga oid xabarnomalar
+                  </td>
+                  <td>Majburiy</td>
+                </tr>
+                <tr>
+                  <td>Telefon raqam</td>
+                  <td>Hisobni tasdiqlash (SMS/OTP) va qo'llab-quvvatlash</td>
+                  <td>Majburiy</td>
+                </tr>
+                <tr>
+                  <td>Saqlangan sevimli patternlar</td>
+                  <td>
+                    Foydalanuvchi tanlagan naqshlarni saqlash va sinxronlash
+                  </td>
+                  <td>Ixtiyoriy</td>
+                </tr>
+                <tr>
+                  <td>Obuna va to'lov holati</td>
+                  <td>
+                    Pullik funksiyalarga kirishni boshqarish, hisob-kitob
+                  </td>
+                  <td>Majburiy (obuna uchun)</td>
+                </tr>
+                <tr>
+                  <td>Push token va bildirishnoma sozlamalari</td>
+                  <td>Bildirishnomalarni yuborish</td>
+                  <td>Ixtiyoriy</td>
+                </tr>
+                <tr>
+                  <td>
+                    Texnik ma'lumotlar (qurilma modeli, OS versiyasi, ilova
+                    versiyasi, xatolik hisobotlari)
+                  </td>
+                  <td>Ilova barqarorligini ta'minlash va xatolarni tuzatish</td>
+                  <td>Avtomatik</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
 
-          <div class="data-item">
-            <span class="dot"></span>Bildirishnoma sozlamalari
-          </div>
-          <div class="data-item">
-            <span class="dot"></span>Obuna va ilova ichidagi faoliyat tarixi
-          </div>
-        </div>
-        <p class="retention">
-          <strong>Muddat:</strong> so'rov tasdiqlangandan so'ng hisobingiz darhol
-          bloklanadi va barcha shaxsiy ma'lumotlaringiz serverlarimizdan
-          <strong>30 kun ichida</strong> butunlay o'chiriladi.
-          <br />
-          <strong>Saqlanadigan ma'lumotlar:</strong> to'lov va soliq
-          hisobotlariga oid yozuvlar (to'lov sanasi va summasi) qonun talabiga
-          ko'ra shaxsni aniqlab bo'lmaydigan shaklda saqlanishi mumkin. Bu
-          ma'lumotlar sizning profilingiz bilan bog'lanmaydi.
-        </p>
-      </div>
+          <h3>Biz yig'MAYDIGAN ma'lumotlar</h3>
+          <ul class="bullets">
+            <li>Aniq geolokatsiya (GPS koordinatalari)</li>
+            <li>Kontaktlar ro'yxati, SMS yoki qo'ng'iroqlar tarixi</li>
+            <li>
+              Bank kartasi raqamlari — to'lovlar to'liq to'lov provayderi
+              tomonidan qayta ishlanadi, karta ma'lumotlari bizning
+              serverlarimizga tushmaydi
+            </li>
+            <li>Mikrofon yoki kamera yozuvlari</li>
+          </ul>
+        </section>
 
-      <div class="contact-section">
-        <h2>Ilovasiz o'chirishni so'rash</h2>
-        <p>
-          Agar ilovadan foydalana olmasangiz (masalan, ilovani o'chirib
-          yuborgan bo'lsangiz yoki hisobingizga kira olmasangiz), quyidagi
-          manzillarga murojaat qiling. Xabarda ro'yxatdan o'tgan
-          <strong>telefon raqamingiz yoki emailingiz</strong>ni yozing va
-          "Hisobni o'chirish" deb ko'rsating. So'rovingiz
-          <strong>7 ish kuni</strong> ichida ko'rib chiqiladi.
-        </p>
-        <div class="contact-list">
-          <div class="contact-item">
-            <span>Email</span>
-            <a href="mailto:umidjongafforov844@gmail.com?subject=Chinora%20-%20Hisobni%20o'chirish"
+        <!-- 03 -->
+        <section class="sec">
+          <h2>Ma'lumotlardan foydalanish maqsadlari</h2>
+          <ul class="bullets">
+            <li>Hisobingizni yaratish, tasdiqlash va boshqarish</li>
+            <li>
+              Ilovaning asosiy funksiyalarini taqdim etish (naqshlarni saqlash,
+              sinxronlash)
+            </li>
+            <li>Obuna va to'lovlarni boshqarish</li>
+            <li>Texnik qo'llab-quvvatlash ko'rsatish</li>
+            <li>
+              Xizmat sifatini oshirish, xatoliklarni aniqlash va bartaraf etish
+            </li>
+            <li>
+              Qonun talablarini bajarish (soliq va buxgalteriya hisoboti)
+            </li>
+          </ul>
+          <p>
+            Biz shaxsiy ma'lumotlaringizni <strong>sotmaymiz</strong> va uchinchi
+            tomonlarga reklama maqsadida <strong>bermaymiz</strong>.
+          </p>
+        </section>
+
+        <!-- 04 -->
+        <section class="sec">
+          <h2>Uchinchi tomon xizmatlari</h2>
+          <p>
+            Ilova ishlashi uchun quyidagi ishonchli xizmatlardan foydalanadi. Har
+            biri o'z maxfiylik siyosatiga ega:
+          </p>
+
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Xizmat</th>
+                  <th>Vazifasi</th>
+                  <th>Siyosati</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Firebase Authentication (Google LLC)</td>
+                  <td>Hisobga kirish va autentifikatsiya</td>
+                  <td>
+                    <a href="https://firebase.google.com/support/privacy"
+                      >firebase.google.com/support/privacy</a
+                    >
+                  </td>
+                </tr>
+                <tr>
+                  <td>Firebase Cloud Messaging (Google LLC)</td>
+                  <td>Push bildirishnomalarni yetkazish</td>
+                  <td>
+                    <a href="https://firebase.google.com/support/privacy"
+                      >firebase.google.com/support/privacy</a
+                    >
+                  </td>
+                </tr>
+                <tr>
+                  <td>Google Play Billing (Google LLC)</td>
+                  <td>Obuna va ilova ichidagi to'lovlar</td>
+                  <td>
+                    <a href="https://policies.google.com/privacy"
+                      >policies.google.com/privacy</a
+                    >
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <p>
+            Ma'lumotlar shifrlangan kanallar (HTTPS/TLS) orqali uzatiladi va
+            xizmat provayderlarining serverlarida saqlanishi mumkin. Bu
+            provayderlar ma'lumotni faqat bizga xizmat ko'rsatish uchun ishlatadi.
+          </p>
+        </section>
+
+        <!-- 05 -->
+        <section class="sec">
+          <h2>Ma'lumotlarni uzatish va oshkor qilish</h2>
+          <p>
+            Shaxsiy ma'lumotlaringiz faqat quyidagi hollarda uchinchi tomonlarga
+            oshkor qilinadi:
+          </p>
+          <ul class="bullets">
+            <li>Siz aniq rozilik bergan bo'lsangiz</li>
+            <li>
+              Xizmatni texnik jihatdan ta'minlash uchun (yuqoridagi provayderlar)
+            </li>
+            <li>
+              Qonun, sud qarori yoki vakolatli davlat organi talabiga binoan
+            </li>
+            <li>
+              Firibgarlik, suiiste'mol yoki xavfsizlik tahdidining oldini olish
+              zarur bo'lganda
+            </li>
+          </ul>
+        </section>
+
+        <!-- 06 -->
+        <section class="sec">
+          <h2>Ma'lumotlarni saqlash muddati va xavfsizlik</h2>
+          <p>
+            Ma'lumotlaringiz hisobingiz faol bo'lgan davrda saqlanadi. Hisob
+            o'chirilgach, barcha shaxsiy ma'lumotlar
+            <strong>30 kun ichida</strong> serverlarimizdan butunlay o'chiriladi.
+          </p>
+          <p>
+            <strong>Istisno:</strong> to'lov va soliq hisobotlariga oid yozuvlar
+            (to'lov sanasi va summasi) qonun talabiga ko'ra saqlanadi, ammo ular
+            shaxsni aniqlab bo'lmaydigan shaklga keltiriladi va profilingiz bilan
+            bog'lanmaydi.
+          </p>
+          <p>
+            Xavfsizlik uchun biz TLS shifrlash, parollarni xeshlash va serverga
+            cheklangan kirish nazoratini qo'llaymiz. Shunga qaramay, internet
+            orqali uzatishning 100% xavfsizligini kafolatlash mumkin emasligini
+            eslatib o'tamiz.
+          </p>
+        </section>
+
+        <!-- 07 -->
+        <section class="sec">
+          <h2>Sizning huquqlaringiz</h2>
+          <ul class="bullets">
+            <li>
+              <strong>Kirish huquqi</strong> — biz saqlayotgan ma'lumotlaringiz
+              nusxasini so'rash
+            </li>
+            <li>
+              <strong>Tuzatish huquqi</strong> — noto'g'ri ma'lumotni to'g'rilash
+              (ilova ichidagi profil sozlamalari orqali)
+            </li>
+            <li>
+              <strong>O'chirish huquqi</strong> — hisobingizni va barcha
+              ma'lumotlarni butunlay o'chirish (8-bo'limga qarang)
+            </li>
+            <li>
+              <strong>Rozilikni qaytarib olish</strong> — bildirishnomalarni
+              o'chirish yoki obunani bekor qilish
+            </li>
+          </ul>
+          <p>
+            Har qanday so'rov uchun
+            <a href="mailto:umidjongafforov844@gmail.com"
               >umidjongafforov844@gmail.com</a
             >
+            manziliga yozing. Javob <strong>7 ish kuni</strong> ichida beriladi.
+          </p>
+        </section>
+
+        <!-- 08 -->
+        <section class="sec">
+          <h2>Hisobni va ma'lumotlarni o'chirish</h2>
+          <p>
+            Siz istalgan vaqtda hisobingizni ilova ichidan o'chirishingiz mumkin.
+            Quyidagi qadamlarni bajaring:
+          </p>
+
+          <div class="warning">
+            <div class="warning-icon">⚠️</div>
+            <p>
+              <strong>Diqqat:</strong> Hisobni o'chirgandan so'ng barcha
+              ma'lumotlaringiz, sevimlilaringiz va profil ma'lumotlaringiz
+              <strong>qaytarib bo'lmaydigan</strong> tarzda o'chiriladi.
+            </p>
           </div>
-          <div class="contact-item">
-            <span>Telegram</span>
-            <a href="https://t.me/chinora_admin">@chinora_admin</a>
+
+          <div class="steps">
+            <div class="step">
+              <div class="step-number">01</div>
+              <div class="step-content">
+                <div class="step-label">Qadam 1</div>
+                <h3>Profil sahifasiga o'ting</h3>
+                <p>
+                  Ilovani oching va pastki navigatsiyadan
+                  <strong>"Profil"</strong> bo'limiga o'ting. Sahifaning eng
+                  pastiga aylantiring.
+                </p>
+              </div>
+              <div class="phone-wrap">
+                <div class="phone">
+                  <img
+                    src="https://twyuwoabay.ufs.sh/f/VKF1Rsh9mraTymUcfzwaVhgOKxAJXyMLHs4jpbNztU7W6Bei"
+                    alt="Chinora ilovasining profil sahifasi"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="step">
+              <div class="step-number">02</div>
+              <div class="step-content">
+                <div class="step-label">Qadam 2</div>
+                <h3>"Hisobni o'chirish" tugmasini bosing</h3>
+                <p>
+                  <strong>"Hisobni o'chirish"</strong> (qizil tugma) ni bosing.
+                  Tasdiqlash oynasida <strong>"Davom etish"</strong> tugmasini
+                  tanlang.
+                </p>
+              </div>
+              <div class="phone-wrap">
+                <div class="phone">
+                  <img
+                    src="https://twyuwoabay.ufs.sh/f/VKF1Rsh9mraTpxxwDITfPBD6zfVSTWL9iQtaH5yXhxsKZenM"
+                    alt="Hisobni o'chirish oynasi"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="step">
+              <div class="step-number">03</div>
+              <div class="step-content">
+                <div class="step-label">Qadam 3</div>
+                <h3>Tasdiqlang</h3>
+                <p>
+                  Ikkinchi tasdiqlash oynasida
+                  <strong>"Ha, o'chirish"</strong> tugmasini bosing. Hisobingiz
+                  darhol bloklanadi.
+                </p>
+              </div>
+              <div class="phone-wrap">
+                <div class="phone">
+                  <img
+                    src="https://twyuwoabay.ufs.sh/f/VKF1Rsh9mraTEf0EI9ACq2NdVgfuY5evJnHrRZb4ohl6ILza"
+                    alt="O'chirishni tasdiqlash oynasi"
+                  />
+                </div>
+              </div>
+            </div>
           </div>
-        </div>
+
+          <h3>Ilovasiz o'chirishni so'rash</h3>
+          <p>
+            Agar ilovadan foydalana olmasangiz (ilovani o'chirib yuborgan
+            bo'lsangiz yoki hisobingizga kira olmasangiz), quyidagi manzillarga
+            murojaat qiling. Xabarda ro'yxatdan o'tgan
+            <strong>telefon raqamingiz yoki emailingiz</strong>ni yozing va
+            "Hisobni o'chirish" deb ko'rsating. So'rov
+            <strong>7 ish kuni</strong> ichida bajariladi.
+          </p>
+
+          <div class="contact-list">
+            <div class="contact-item">
+              <span>Email</span>
+              <a
+                href="mailto:umidjongafforov844@gmail.com?subject=Chinora%20-%20Hisobni%20o'chirish"
+                >umidjongafforov844@gmail.com</a
+              >
+            </div>
+            <div class="contact-item">
+              <span>Telegram</span>
+              <a href="https://t.me/chinora_admin">@chinora_admin</a>
+            </div>
+          </div>
+        </section>
+
+        <!-- 09 -->
+        <section class="sec">
+          <h2>Bolalar maxfiyligi</h2>
+          <p>
+            Chinora ilovasi <strong>13 yoshdan kichik</strong> bolalarga
+            mo'ljallanmagan va biz ulardan ataylab ma'lumot yig'maymiz. Agar
+            bunday ma'lumot yig'ilgani ma'lum bo'lsa, u darhol o'chiriladi.
+            Ota-onalar shubha qilsa, biz bilan bog'lanishlari mumkin.
+          </p>
+        </section>
+
+        <!-- 10 -->
+        <section class="sec">
+          <h2>Siyosatga o'zgartirishlar</h2>
+          <p>
+            Ushbu maxfiylik siyosati vaqti-vaqti bilan yangilanishi mumkin.
+            Yangilangan versiya ushbu sahifada e'lon qilinadi va yuqoridagi
+            "Oxirgi yangilanish" sanasi o'zgaradi. Muhim o'zgarishlar haqida
+            ilova orqali yoki email orqali xabar beramiz.
+          </p>
+        </section>
+
+        <!-- 11 -->
+        <section class="sec">
+          <h2>Biz bilan bog'lanish</h2>
+          <p>
+            Maxfiylik siyosati yoki ma'lumotlaringiz bo'yicha savollaringiz
+            bo'lsa:
+          </p>
+          <div class="contact-list">
+            <div class="contact-item">
+              <span>Email</span>
+              <a href="mailto:umidjongafforov844@gmail.com"
+                >umidjongafforov844@gmail.com</a
+              >
+            </div>
+            <div class="contact-item">
+              <span>Telegram</span>
+              <a href="https://t.me/chinora_admin">@chinora_admin</a>
+            </div>
+          </div>
+        </section>
       </div>
 
-      <div class="en-summary">
-        <h2>Account Deletion — English summary</h2>
+      <!-- ENGLISH -->
+      <div class="en">
+        <h2>Privacy Policy</h2>
+        <div class="en-sub">
+          English version · Chinora (com.chinara.chinora) by umidjon_company ·
+          Last updated: 25 July 2026
+        </div>
+
         <p>
-          This page explains how to delete your account and associated data for
-          the <strong>Chinora</strong> mobile application
-          (<strong>com.chinara.chinora</strong>), published on Google Play by the
-          developer <strong>umidjon_company</strong>.
+          This is the official <strong>Privacy Policy</strong> for the
+          <strong>Chinora</strong> mobile application (package
+          <strong>com.chinara.chinora</strong>), published on Google Play by the
+          developer <strong>umidjon_company</strong>. It explains what data the
+          app collects, why it is collected, who it is shared with, and how you
+          can delete it.
         </p>
+
+        <h3>Data we collect</h3>
+        <ul>
+          <li>
+            <strong>Account data:</strong> name, email address and phone number —
+            used to create and verify your account and to provide support.
+          </li>
+          <li>
+            <strong>App activity:</strong> saved favourite patterns, notification
+            settings, subscription status and in-app activity history.
+          </li>
+          <li>
+            <strong>Technical data:</strong> device model, OS version, app version
+            and crash reports — used for stability and debugging.
+          </li>
+        </ul>
+        <p>
+          We do <strong>not</strong> collect precise location, contacts, SMS, call
+          logs, microphone or camera data. Card numbers are handled entirely by
+          the payment provider and never reach our servers.
+        </p>
+
+        <h3>How we use it</h3>
+        <p>
+          To create and manage your account, deliver the app's core features,
+          manage subscriptions and payments, provide support, improve reliability,
+          and comply with legal and tax obligations. We never sell personal data
+          and never share it for advertising.
+        </p>
+
+        <h3>Third-party services</h3>
+        <p>
+          Firebase Authentication, Firebase Cloud Messaging and Google Play
+          Billing (all Google LLC). Data is transmitted over encrypted HTTPS/TLS
+          connections. See
+          <a href="https://firebase.google.com/support/privacy"
+            >firebase.google.com/support/privacy</a
+          >
+          and
+          <a href="https://policies.google.com/privacy"
+            >policies.google.com/privacy</a
+          >.
+        </p>
+
+        <h3>Retention and security</h3>
+        <p>
+          Data is retained while your account is active. After deletion, all
+          personal data is permanently removed from our servers
+          <strong>within 30 days</strong>. Anonymised payment records required by
+          accounting and tax law are retained but are not linked to your profile.
+          We use TLS encryption, password hashing and restricted server access.
+        </p>
+
+        <h3>Your rights</h3>
+        <p>
+          You may request access to your data, correct it, withdraw consent, or
+          delete your account entirely. Requests are handled within
+          <strong>7 business days</strong>.
+        </p>
+
+        <h3>Account and data deletion</h3>
         <p>
           <strong>In-app:</strong> open the app → <strong>Profile</strong> tab →
-          scroll to the bottom → tap <strong>"Hisobni o'chirish"</strong>
-          (Delete account) → confirm twice. Your account is deleted immediately.
+          scroll to the bottom → tap <strong>"Hisobni o'chirish"</strong> (Delete
+          account) → confirm twice.
+          <br />
+          <strong>Without the app:</strong> email
+          <a href="mailto:umidjongafforov844@gmail.com"
+            >umidjongafforov844@gmail.com</a
+          >
+          or message
+          <a href="https://t.me/chinora_admin">@chinora_admin</a> on Telegram,
+          including the phone number or email used to register.
         </p>
+
+        <h3>Children's privacy</h3>
         <p>
-          <strong>Without the app:</strong> send a deletion request to
-          <a href="mailto:umidjongafforov844@gmail.com">umidjongafforov844@gmail.com</a>
-          or <a href="https://t.me/chinora_admin">@chinora_admin</a> on Telegram,
-          including the phone number or email used to register. Requests are
-          processed within 7 business days.
+          Chinora is not directed at children under 13 and we do not knowingly
+          collect their data. If we learn that we have, it is deleted
+          immediately.
         </p>
+
+        <h3>Changes and contact</h3>
         <p>
-          <strong>Deleted data:</strong> profile information (name, email, phone),
-          saved favourite patterns, notification settings, subscription and
-          in-app activity history — permanently removed within 30 days.
-          <strong>Retained data:</strong> anonymised payment records required by
-          accounting and tax law; these are not linked to your profile.
+          This policy may be updated; the revised version will be posted on this
+          page with a new "last updated" date. Questions:
+          <a href="mailto:umidjongafforov844@gmail.com"
+            >umidjongafforov844@gmail.com</a
+          >.
         </p>
       </div>
 
       <footer>
         <div class="footer-app">Chinora</div>
         <div class="footer-note">
-          © umidjon_company · Chinora (com.chinara.chinora)<br />
-          Savol bo'lsa:
-          <a
-            href="mailto:umidjongafforov844@gmail.com"
-            style="color: var(--gold); text-decoration: none"
+          © 2026 umidjon_company · Chinora (com.chinara.chinora)<br />
+          Maxfiylik siyosati / Privacy Policy · Oxirgi yangilanish: 25.07.2026<br />
+          <a href="mailto:umidjongafforov844@gmail.com"
             >umidjongafforov844@gmail.com</a
           >
           ·
-          <a
-            href="https://t.me/chinora_admin"
-            style="color: var(--gold); text-decoration: none"
-            >@chinora_admin</a
-          >
+          <a href="https://t.me/chinora_admin">@chinora_admin</a>
         </div>
       </footer>
     </div>
